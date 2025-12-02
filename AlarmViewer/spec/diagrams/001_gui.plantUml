@@ -1,0 +1,76 @@
+@startuml 001_gui
+skinparam responseMessageBelowArrow true
+
+title
+GuiRequestForVisualizingListOfDevicesCauses
+GuiRequestForVisualizingListOfAlarmsCauses
+end title
+
+participant "human" as human
+participant "DFM://v1/start-gui" as startGui
+participant "DFM://v1/list-devices-in-gui" as listDevices
+participant "DFM://v1/list-alarms-in-gui" as listAlarms
+
+participant "AA://v1/approve-basic-auth-request" as aaApproval
+
+participant "MWDI://v1/provide-list-of-connected-devices" as deviceList
+participant "MWDI://core-model-1-4:network-control-domain=cache/control-construct={mountName}/alarms-1-0:alarm-pac/current-alarms" as alarmList
+
+
+human -> startGui : (no security)
+human <-- startGui : {client-side-gui-application}
+activate human
+
+note over human
+Enter username and password
+end note
+
+note over human
+Press "Log in"
+end note
+human -> listDevices : (basicAuth)
+activate listDevices
+  note over listDevices
+  GuiRequestForVisualizingListOfDevicesCauses.
+  end note
+
+  note over listDevices
+  Authentication
+  end note
+  listDevices -> aaApproval : {Authorization, applicationName, releaseNumber, operationName, method} (apiKey)
+  listDevices <-- aaApproval : {requestIsApproved, reasonOfObjection}
+
+  note over listDevices
+  RetrievingListOfDevices
+  end note
+  listDevices -> deviceList : (apiKey)
+  listDevices <-- deviceList : {mount-name-list}
+
+human <-- listDevices : {mount-name-list}
+deactivate listDevices
+
+note over human
+Click "any listed mount-name"
+end note
+human -> listAlarms : {mount-name} (basicAuth)
+activate listAlarms
+  note over listAlarms
+  GuiRequestForVisualizingListOfAlarmsCauses.
+  end note
+
+  note over listAlarms
+  Authentication
+  end note
+  listAlarms -> aaApproval : {Authorization, applicationName, releaseNumber,\n operationName, method} (apiKey)
+  listAlarms <-- aaApproval : {requestIsApproved, reasonOfObjection}
+
+  note over listAlarms
+  RetrievingListOfAlarms
+  end note
+  listAlarms -> deviceList : {mount-name} (apiKey)
+  listAlarms <-- deviceList : {[alarm-type-qualifier, alarm-type-id, resource, alarm-severity, timestamp]}
+
+human <-- listAlarms : {[alarm-type-qualifier, alarm-type-id, resource, alarm-severity, timestamp]}
+deactivate listAlarms
+
+@enduml
