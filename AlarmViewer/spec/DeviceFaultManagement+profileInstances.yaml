@@ -128,16 +128,6 @@ profile-instances:
       value-reference: '/core-model-1-4:control-construct/logical-termination-point=dfm-1-0-0-http-s-000/layer-protocol=0/http-server-interface-1-0:http-server-interface-pac/http-server-interface-capability/release-list=1/changes'
 
   - profile-name: 'GenericResponseProfile'
-    uuid: 'dfm-1-0-0-response-p-009'
-    capability:
-      operation-name: '/v1/list-approved-applications-in-generic-representation'
-      field-name-reference: 'LOADfile://*/application-name'
-      description: 'List of approved application names and release numbers'
-      datatype: 'string'
-    configuration:
-      value-reference: 'LOADfile://*/release-number'
-
-  - profile-name: 'GenericResponseProfile'
     uuid: 'dfm-1-0-0-response-p-010'
     capability:
       operation-name: '/v1/inform-about-release-history-in-generic-representation'
