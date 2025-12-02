@@ -231,25 +231,6 @@
                     }
                 },
                 {
-                    "uuid": "dfm-1-0-0-response-p-009",
-                    "profile-name": "response-profile-1-0:PROFILE_NAME_TYPE_GENERIC_RESPONSE_PROFILE",
-                    "response-profile-1-0:response-profile-pac": {
-                        "response-profile-capability": {
-                            "operation-name": "/v1/list-approved-applications-in-generic-representation",
-                            "field-name": {
-                                "field-name-reference": "LOADfile://*/application-name"
-                            },
-                            "description": "List of approved application names and release numbers",
-                            "datatype": "string"
-                        },
-                        "response-profile-configuration": {
-                            "value": {
-                                "value-reference": "LOADfile://*/release-number"
-                            }
-                        }
-                    }
-                },
-                {
                     "uuid": "dfm-1-0-0-response-p-010",
                     "profile-name": "response-profile-1-0:PROFILE_NAME_TYPE_GENERIC_RESPONSE_PROFILE",
                     "response-profile-1-0:response-profile-pac": {

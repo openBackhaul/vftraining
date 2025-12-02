@@ -803,12 +803,17 @@ paths:
               required:
                 - application-name
                 - release-number
+                - list-devices-operation-name
+                - list-alarms-operation-name
+                - protocol
+                - address
+                - port
               properties:
                 application-name:
                   type: string
                   description: >
                     'Name of the caching application that shall be interacted to list the devices and alarms
-                    update [/core-model-1-4:control-construct/logical-termination-point=dfm-1-0-0-http-c-mwdi-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+                    find [/core-model-1-4:control-construct/logical-termination-point=dfm-1-0-0-http-c-mwdi-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
                 release-number:
                   type: string
                   description: >
