@@ -1161,7 +1161,7 @@ paths:
       - $ref: '#/components/parameters/trace-indicator'
       - $ref: '#/components/parameters/customer-journey'
     post:
-      operationId: listDevicesInGui
+      operationId: listAlarmsInGui
       summary: 'Initiates authentication of the user and listing the alarms in the GUI'
       tags:
         - IndividualServices

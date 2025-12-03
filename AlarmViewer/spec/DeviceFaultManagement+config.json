@@ -759,6 +759,75 @@
                 ]
             },
             {
+                "uuid": "dfm-1-0-0-op-s-im-001",
+                "ltp-direction": "core-model-1-4:TERMINATION_DIRECTION_SOURCE",
+                "client-ltp": [],
+                "server-ltp": [
+                    "dfm-1-0-0-http-s-000"
+                ],
+                "layer-protocol": [
+                    {
+                        "local-id": "0",
+                        "layer-protocol-name": "operation-server-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_OPERATION_LAYER",
+                        "operation-server-interface-1-0:operation-server-interface-pac": {
+                            "operation-server-interface-capability": {
+                                "operation-name": "/v1/regard-microwave-device-inventory"
+                            },
+                            "operation-server-interface-configuration": {
+                                "life-cycle-state": "operation-server-interface-1-0:LIFE_CYCLE_STATE_TYPE_EXPERIMENTAL",
+                                "operation-key": "Operation key not yet provided."
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "dfm-1-0-0-op-s-is-001",
+                "ltp-direction": "core-model-1-4:TERMINATION_DIRECTION_SOURCE",
+                "client-ltp": [],
+                "server-ltp": [
+                    "dfm-1-0-0-http-s-000"
+                ],
+                "layer-protocol": [
+                    {
+                        "local-id": "0",
+                        "layer-protocol-name": "operation-server-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_OPERATION_LAYER",
+                        "operation-server-interface-1-0:operation-server-interface-pac": {
+                            "operation-server-interface-capability": {
+                                "operation-name": "/v1/list-devices-in-gui"
+                            },
+                            "operation-server-interface-configuration": {
+                                "life-cycle-state": "operation-server-interface-1-0:LIFE_CYCLE_STATE_TYPE_EXPERIMENTAL",
+                                "operation-key": "Operation key not yet provided."
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "dfm-1-0-0-op-s-is-002",
+                "ltp-direction": "core-model-1-4:TERMINATION_DIRECTION_SOURCE",
+                "client-ltp": [],
+                "server-ltp": [
+                    "dfm-1-0-0-http-s-000"
+                ],
+                "layer-protocol": [
+                    {
+                        "local-id": "0",
+                        "layer-protocol-name": "operation-server-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_OPERATION_LAYER",
+                        "operation-server-interface-1-0:operation-server-interface-pac": {
+                            "operation-server-interface-capability": {
+                                "operation-name": "/v1/list-alarms-in-gui"
+                            },
+                            "operation-server-interface-configuration": {
+                                "life-cycle-state": "operation-server-interface-1-0:LIFE_CYCLE_STATE_TYPE_EXPERIMENTAL",
+                                "operation-key": "Operation key not yet provided."
+                            }
+                        }
+                    }
+                ]
+            },
+            {
                 "uuid": "dfm-1-0-0-http-s-000",
                 "ltp-direction": "core-model-1-4:TERMINATION_DIRECTION_SOURCE",
                 "client-ltp": [
@@ -783,7 +852,10 @@
                     "dfm-1-0-0-op-s-bs-002",
                     "dfm-1-0-0-op-s-bs-003",
                     "dfm-1-0-0-op-s-bs-004",
-                    "dfm-1-0-0-op-s-bs-005"
+                    "dfm-1-0-0-op-s-bs-005",
+                    "dfm-1-0-0-op-s-im-001",
+                    "dfm-1-0-0-op-s-is-001",
+                    "dfm-1-0-0-op-s-is-002"
                 ],
                 "server-ltp": [
                     "dfm-1-0-0-tcp-s-000"
@@ -2630,3 +2702,4 @@
         ]
     }
 }
+
